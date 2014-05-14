@@ -9,16 +9,16 @@ install:
  - cd src
  
 script: 
- - make -f makefile.unix -j 3
+ - make -f makefile.unix -j 5
  - cd ..
- - qmake USE_UPNP=-
- - make
+ - qmake USE_UPNP=- 
+ - make -j 5
  
 notifications:
   irc:
     channels:
       - "chat.freenode.net#digitalcoin-dev"
     template:
-      - "%{repository}/%{branch} (%{commit} - %{author}): %{message}, Result: %{result}, Build Time: %{duration}"
+      - "%{repository}/%{branch} (%{commit} - %{author}): %{message}, Build Time: %{duration}"
       - "Change view : %{compare_url}"
       - "Build details : %{build_url}"
