@@ -10,7 +10,6 @@ install:
  
 script: 
  - make -f makefile.unix -j 3
- - make test
  - cd ..
  - qmake USE_UPNP=-
  - make
